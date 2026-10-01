@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #3b82f6;
+  --color-brand-indigo: #6366f1;
+  --color-brand-purple: #a855f7;
+}
+
+:root {
+  --bg-main: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.7);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border-glass: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+}
+
+.glass-header {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-glass);
+}
+
+/* Custom Markmap Styling */
+.markmap-node {
+  cursor: pointer;
+}
+
+.markmap-node text {
+  fill: #ffffff !important; /* Brighter text */
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* Better contrast */
+}
+
+.markmap-link {
+  stroke-width: 2.5px !important;
+  stroke: #64748b !important;
+  opacity: 0.8;
+}
+
+.mm-toolbar {
+  background: #1e293b !important; /* Solid background for performance */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  padding: 4px !important;
+}
+
+.mm-toolbar-item {
+  color: #f1f5f9 !important;
+}
+
+/* Simplified background for performance */
+.bg-blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 50%, transparent 100%);
+  z-index: -1;
+  pointer-events: none;
+}
